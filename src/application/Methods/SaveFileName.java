@@ -11,7 +11,7 @@ public class SaveFileName{
 		if(saveFolderName.getText().isEmpty() && corpName.getText().isEmpty()) {
 			filename = "SampleCorp-PL";
 		} else if(saveFolderName.getText().isEmpty()) {
-			filename = corpName.getText();
+			filename = corpName.getText() + "-PL";
 		} else {
 			filename = saveFolderName.getText();
 		}

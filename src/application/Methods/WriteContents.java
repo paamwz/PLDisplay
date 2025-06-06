@@ -15,7 +15,7 @@ public class WriteContents{
 		if(saveFolderName.getText().isEmpty() && corpName.getText().isEmpty()) {
 			fileName = "SampleCorp-PL";
 		} else if(saveFolderName.getText().isEmpty()) {
-			fileName = corpName.getText();
+			fileName = corpName.getText() + "-PL";
 		} else {
 			fileName = saveFolderName.getText();
 		}

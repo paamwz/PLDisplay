@@ -11,7 +11,7 @@ public class CreateFolder{
 		if(saveFolderName.getText().isEmpty() && corpName.getText().isEmpty()) {
 			folderName = "SampleCorp-PL";
 		} else if(saveFolderName.getText().isEmpty()) {
-			folderName = corpName.getText();
+			folderName = corpName.getText() + "-PL";
 		} else {
 			folderName = saveFolderName.getText();
 		}
