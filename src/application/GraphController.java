@@ -60,9 +60,9 @@ public class GraphController {
     @FXML
     public TextField corpTaxEtc;
     @FXML
-    public Label initNetProfitIndex;
+    public Label netProfitIndex;
     @FXML
-    public TextField initNetProfit;
+    public TextField netProfit;
     
     @FXML
     public Label totalRevenueIndex;
@@ -91,16 +91,12 @@ public class GraphController {
     @FXML
     public Label corpTaxEtcRate;
     @FXML
-    public Label initNetProfitRate;
+    public Label netProfitRate;
     
     
     @FXML
     public TextField saveFolderName;
     
-    
-    
-    
-
     @FXML
     private StackedBarChart<String, Number> controlledGraph;
     
@@ -122,7 +118,7 @@ public class GraphController {
         		nonOpeExpenses, 
         		extraLoss, 
         		corpTaxEtc, 
-        		initNetProfit
+        		netProfit
         };
         
         Label[] labelFields = {
@@ -134,7 +130,7 @@ public class GraphController {
         		nonOpeExpensesRate,
         		extraLossRate,
         		corpTaxEtcRate,
-        		initNetProfitRate
+        		netProfitRate
         };
         
         // GraphDataHandler を使ってデータを取得
@@ -167,6 +163,19 @@ public class GraphController {
     }
     @FXML
     void onSaveButtonClick(ActionEvent event) {
+        TextField[] textFields = {
+        		sales, 
+        		nonOpeIncome, 
+        		spProfit, 
+        		costOfSales, 
+        		SGandA, 
+        		nonOpeExpenses, 
+        		extraLoss, 
+        		corpTaxEtc, 
+        		netProfit
+        };
+    	GetNumber getNumber = new GetNumber();
+        double[] inputData = getNumber.getDataFromTextFields(textFields);
     	
     	String[] corpLabels = {corpNameIndex.getText(), corpName.getText()};
     	String[] titleIndex = {
@@ -179,21 +188,21 @@ public class GraphController {
     			nonOpeExpensesIndex.getText(),
     			extraLossIndex.getText(),
     			corpTaxEtcIndex.getText(),
-    			initNetProfitIndex.getText(),
+    			netProfitIndex.getText(),
     			totalRevenueIndex.getText(),
     			totalCostIndex.getText()
     			};
     	String[] priceParameters = {
     			"金額",
-    			sales.getText(),
-    			nonOpeIncome.getText(),
-    			spProfit.getText(),
-    			costOfSales.getText(),
-    			SGandA.getText(),
-    			nonOpeExpenses.getText(),
-    			extraLoss.getText(),
-    			corpTaxEtc.getText(),
-    			initNetProfit.getText(),
+    			Double.valueOf(inputData[0]).toString(),
+    			Double.valueOf(inputData[1]).toString(),
+    			Double.valueOf(inputData[2]).toString(),
+    			Double.valueOf(inputData[3]).toString(),
+    			Double.valueOf(inputData[4]).toString(),
+    			Double.valueOf(inputData[5]).toString(),
+    			Double.valueOf(inputData[6]).toString(),
+    			Double.valueOf(inputData[7]).toString(),
+    			Double.valueOf(inputData[8]).toString(),
     			totalRevenueLabel.getText(),
     			totalCostLabel.getText()
     			};
@@ -207,7 +216,7 @@ public class GraphController {
     			nonOpeExpensesRate.getText(),
     			extraLossRate.getText(),
     			corpTaxEtcRate.getText(),
-    			initNetProfitRate.getText()
+    			netProfitRate.getText()
     			};
     	try {
     		//pathに

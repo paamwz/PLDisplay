@@ -121,11 +121,11 @@
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></TextField>
-                  <Label fx:id="initNetProfitIndex" layoutX="10.0" layoutY="94.0" text="当初純利益 : initial net profit">
+                  <Label fx:id="netProfitIndex" layoutX="10.0" layoutY="94.0" text="当期純利益 : net profit">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Label>
-                  <TextField fx:id="initNetProfit" layoutX="10.0" layoutY="111.0">
+                  <TextField fx:id="netProfit" layoutX="10.0" layoutY="111.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></TextField>
@@ -197,8 +197,8 @@
                         <Label fx:id="extraLossRate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label text="法人税等 : corporate tax etc." GridPane.rowIndex="5" />
                         <Label fx:id="corpTaxEtcRate" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="当初純利益 : initial net profit" GridPane.rowIndex="6" />
-                        <Label fx:id="initNetProfitRate" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="当期純利益 : net profit" GridPane.rowIndex="6" />
+                        <Label fx:id="netProfitRate" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="特別利益 : special profit" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                         <Label fx:id="spProfitRate" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                         <Label text="費用項目：Expenses index" />
